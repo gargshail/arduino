@@ -6,11 +6,11 @@ Created this test program to verify if  PL2303HX is working
 
 Connections :
 
-PL2303HX   	 Arduino
+     PL2303HX ---- Arduino
 
-       RX --- pin 10
-       TX --- pin 11
-       GND --- GND
+       RX ---------- pin 10
+       TX ---------- pin 11
+       GND ---------- GND
 
 
 
