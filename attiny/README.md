@@ -17,3 +17,16 @@ as described in above site
 
 
 [5 pieces attiny for $3.75](http://www.ebay.com/itm/5PCS-ATTINY13A-PU-ATTINY13A-DIP8-IC-MCU-AVR-1K-FLASH-20MHZ-ATMEL-D6-NEW-/281422680455?pt=LH_DefaultDomain_0&hash=item4186195187)
+
+
+
+Adafruit library doesn't work  because it depends on SPI library.
+
+LCD nokia 5510 library that works with attiny 
+
+download https://github.com/Safecast/nGeigie/blob/master/libraries/PCD8544-1.4.zip
+
+import library
+
+
+
