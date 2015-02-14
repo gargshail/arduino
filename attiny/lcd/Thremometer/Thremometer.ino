@@ -56,9 +56,9 @@ static unsigned char reset = 4;
 static PCD8544 lcd (sclk,sdin,dc,reset,sce );
 */
 
-static PCD8544 lcd (2,1,0,3,4); // goes to (clk, din, dc, ce, rst) of the LCD
+static PCD8544 lcd (2,1,0,3,6); // goes to (clk, din, dc, rst, ce) of the LCD. Used non-existent output pin 6 for CE. 
 
-// it is possible to save one attiny  pin by connecting  CE of LCD to ground
+// it is possible to save one attiny  pin by connecting  CE of LCD to ground. It leaves ping 4 and 5 for other purpose. Check if pin 5 can be used. It is RESET pin
 
 
 void setup() {
