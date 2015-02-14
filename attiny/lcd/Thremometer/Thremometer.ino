@@ -27,7 +27,7 @@
 
 
 static const byte sensorPin = 0;
-static const byte ledPin = 5;
+static const byte ledPin = 4;
 
 // The dimensions of the LCD (in pixels)...
 static const byte LCD_WIDTH = 84;
@@ -57,7 +57,7 @@ static PCD8544 lcd (sclk,sdin,dc,reset,sce );
 */
 
 static PCD8544 lcd (2,1,0,3,6); // goes to (clk, din, dc, rst, ce) of the LCD. Used non-existent output pin 6 for CE. 
-
+// Digital IO pin numbers are different from physical pin numbers.   See README.md
 // it is possible to save one attiny  pin by connecting  CE of LCD to ground. It leaves ping 4 and 5 for other purpose. Check if pin 5 can be used. It is RESET pin
 
 
