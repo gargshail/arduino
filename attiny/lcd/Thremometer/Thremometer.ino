@@ -27,7 +27,7 @@
 
 
 static const byte sensorPin = 0;
-static const byte ledPin = 13;
+static const byte ledPin = 4;
 
 // The dimensions of the LCD (in pixels)...
 static const byte LCD_WIDTH = 84;
@@ -46,7 +46,19 @@ static const byte THERMO_HEIGHT = 2;
 static const byte thermometer[] = { 0x00, 0x00, 0x48, 0xfe, 0x01, 0xfe, 0x00, 0x02, 0x05, 0x02, 0x00, 0x00, 0x62, 0xff, 0xfe, 0xff, 0x60, 0x00, 0x00, 0x00}; 
 
 // following line has been modified from original code. Default pin assignment is not compatible with AtTiny pins 
-static PCD8544 lcd (2,1,0,3,4);
+/*
+ static unsigned char sclk = 2;
+static unsigned char sdin = 1;
+static unsigned char dc = 0;
+static unsigned char sce = 3;
+static unsigned char reset = 4;
+
+static PCD8544 lcd (sclk,sdin,dc,reset,sce );
+*/
+
+static PCD8544 lcd (2,1,0,3,6); // goes to (clk, din, dc, rst, ce) of the LCD. Used non-existent output pin 6 for CE. 
+// Digital IO pin numbers are different from physical pin numbers.   See README.md
+// it is possible to save one attiny  pin by connecting  CE of LCD to ground. It leaves ping 4 and 5 for other purpose. Check if pin 5 can be used. It is RESET pin
 
 
 void setup() {
@@ -69,7 +81,7 @@ void loop() {
   // Start beyond the edge of the screen...
   static byte xChart = LCD_WIDTH;
 
-  digitalWrite(ledPin, HIGH);
+  digitalWrite(ledPin, HIGH);  
 
   // Read the temperature (in celsius)...
   float temp = (1.1 * analogRead(sensorPin) * 100.0) / 1024.0;
